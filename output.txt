@@ -1,0 +1,8 @@
+============================================================
+Traceback (most recent call last):
+  File "C:\Users\RIYAZ\OneDrive\Desktop\afsal projects\sentiment analyzer for reviews using NLP\sentiment_project.py", line 9, in <module>
+    print("\U0001f4ca TOTAL COLUMNS:", len(df.columns))
+  File "C:\Users\RIYAZ\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4ca' in position 0: character maps to <undefined>

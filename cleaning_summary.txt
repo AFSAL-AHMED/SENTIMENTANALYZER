@@ -1,0 +1,17 @@
+DATASET CLEANING SUMMARY
+============================================================
+
+Original shape: (1597, 27)
+Cleaned shape: (1177, 2)
+
+Columns removed: 25
+Rows removed: 420
+
+RATING DISTRIBUTION:
+rating
+1.0     42
+2.0     34
+3.0    124
+4.0    236
+5.0    741
+Name: count, dtype: int64

@@ -1,0 +1,117 @@
+TOTAL COLUMNS: 27
+
+ALL COLUMN NAMES:
+1. id
+2. asins
+3. brand
+4. categories
+5. colors
+6. dateAdded
+7. dateUpdated
+8. dimension
+9. ean
+10. keys
+11. manufacturer
+12. manufacturerNumber
+13. name
+14. prices
+15. reviews.date
+16. reviews.doRecommend
+17. reviews.numHelpful
+18. reviews.rating
+19. reviews.sourceURLs
+20. reviews.text
+21. reviews.title
+22. reviews.userCity
+23. reviews.userProvince
+24. reviews.username
+25. sizes
+26. upc
+27. weight
+
+DATASET SHAPE: (1597, 27)
+
+============================================================
+SAMPLE DATA (First Row):
+============================================================
+
+id:
+  AVpe7AsMilAPnD_xQ78G
+
+asins:
+  B00QJDU3KY
+
+brand:
+  Amazon
+
+categories:
+  Amazon Devices,mazon.co.uk
+
+colors:
+  nan
+
+dateAdded:
+  2016-03-08T20:21:53Z
+
+dateUpdated:
+  2017-07-18T23:52:58Z
+
+dimension:
+  169 mm x 117 mm x 9.1 mm
+
+ean:
+  nan
+
+keys:
+  kindlepaperwhite/b00qjdu3ky
+
+manufacturer:
+  Amazon
+
+manufacturerNumber:
+  nan
+
+name:
+  Kindle Paperwhite
+
+prices:
+  [{"amountMax":139.99,"amountMin":139.99,"currency":"USD","dateAdded":"2017-07-18T23:52:58Z","dateSeen":["2017-07-15T18:10:23.807Z","2016-03-16T00:00:00Z"],"isSale":"false","merchant":"Amazon.com","shipping":"FREE Shipping.","sourceURLs":["https://www.amazon.com/Kindle-Paperwhite-High-Resolution-Display-Built/dp/B00QJDU3KY/ref=lp_6669702011_1_7/132-1677641-8459202?s=amazon-devices&ie=UTF8&qid=1498832761&sr=1-7","http://www.amazon.com/Kindle-Paperwhite-High-Resolution-Display-Built-/dp/B00QJDU3KY"]},{"amountMax":119.99,"amountMin":119.99,"condition":"new","currency":"EUR","dateAdded":"2016-03-08T20:21:53Z","dateSeen":["2016-01-29T00:00:00Z"],"isSale":"false","merchant":"Amazon EU Sarl","shipping":"free","sourceURLs":["http://www.amazon.co.uk/Kindle-Paperwhite-Resolution-Display-Built-/dp/B00QJDU3KY"]},{"amountMax":139.99,"amountMin":139.99,"condition":"new","currency":"CAD","dateAdded":"2016-03-08T20:21:53Z","dateSeen":["2016-01-11T00:00:00Z"],"isSale":"false","merchant":"Amazon","shipping":"free","sourceURLs":["http://www.amazon.ca/dp/B00QJDU3KY"]},{"amountMax":119.99,"amountMin":119.99,"currency":"USD","dateAdded":"2016-03-08T20:21:53Z","dateSeen":["2016-03-12T00:00:00Z"],"isSale":"true","merchant":"Amazon.com","sourceURLs":["http://www.amazon.com/Kindle-Paperwhite-High-Resolution-Display-Built-/dp/B00QJDU3KY"]},{"amountMax":119.99,"amountMin":119.99,"condition":"new","currency":"EUR","dateAdded":"2016-03-08T20:21:53Z","dateSeen":["2015-11-15T00:00:00Z"],"isSale":"false","merchant":"Amazon","shipping":"free","sourceURLs":["http://www.amazon.co.uk/All-New-Kindle-Paperwhite-Resolution-Display/dp/B00QJDU3KY"]},{"amountMax":17.99,"amountMin":17.99,"condition":"new","currency":"EUR","dateAdded":"2016-03-08T20:21:53Z","dateSeen":["2016-01-29T00:00:00Z"],"isSale":"false","merchant":"Amazon EU Sarl","shipping":"free","sourceURLs":["http://www.amazon.co.uk/Kindle-Paperwhite-Resolution-Display-Built-/dp/B00QJDU3KY"]},{"amountMax":17.99,"amountMin":17.99,"condition":"new","currency":"EUR","dateAdded":"2016-03-08T20:21:53Z","dateSeen":["2015-11-15T00:00:00Z"],"isSale":"false","merchant":"Amazon","shipping":"free","sourceURLs":["http://www.amazon.co.uk/All-New-Kindle-Paperwhite-Resolution-Display/dp/B00QJDU3KY"]},{"amountMax":139.00,"amountMin":139.00,"condition":"new","currency":"CAD","dateAdded":"2016-03-08T20:21:53Z","dateSeen":["2015-07-06T05:00:00Z"],"isSale":"false","merchant":"Amazon.ca","shipping":"free","sourceURLs":["http://www.amazon.ca/dp/B00QJDU3KY"]}]
+
+reviews.date:
+  2015-08-08T00:00:00.000Z
+
+reviews.doRecommend:
+  nan
+
+reviews.numHelpful:
+  139.0
+
+reviews.rating:
+  5.0
+
+reviews.sourceURLs:
+  https://www.amazon.com/Kindle-Paperwhite-High-Resolution-Display-Built/dp/B00QJDU3KY/ref=lp_6669702011_1_7/132-1677641-8459202?s=amazon-devices&ie=UTF8&qid=1498832761&sr=1-7
+
+reviews.text:
+  I initially had trouble deciding between the paperwhite and the voyage because reviews more or less said the same thing: the paperwhite is great, but if you have spending money, go for the voyage.Fortunately, I had friends who owned each, so I ended up buying the paperwhite on this basis: both models now have 300 ppi, so the 80 dollar jump turns out pricey the voyage's page press isn't always sensitive, and if you are fine with a specific setting, you don't need auto light adjustment).It's been a week and I am loving my paperwhite, no regrets! The touch screen is receptive and easy to use, and I keep the light at a specific setting regardless of the time of day. (In any case, it's not hard to change the setting either, as you'll only be changing the light level at a certain time of day, not every now and then while reading).Also glad that I went for the international shipping option with Amazon. Extra expense, but delivery was on time, with tracking, and I didnt need to worry about customs, which I may have if I used a third party shipping service.
+
+reviews.title:
+  Paperwhite voyage, no regrets!
+
+reviews.userCity:
+  nan
+
+reviews.userProvince:
+  nan
+
+reviews.username:
+  Cristina M
+
+sizes:
+  nan
+
+upc:
+  nan
+
+weight:
+  205 grams

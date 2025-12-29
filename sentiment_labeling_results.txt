@@ -1,0 +1,33 @@
+SENTIMENT LABELING COMPLETE
+============================================================
+
+First 10 rows:
+    rating sentiment
+0      5.0  positive
+1      5.0  positive
+2      4.0  positive
+3      5.0  positive
+4      5.0  positive
+13     4.0  positive
+14     5.0  positive
+15     5.0  positive
+16     4.0  positive
+17     5.0  positive
+
+============================================================
+SENTIMENT DISTRIBUTION:
+============================================================
+sentiment
+positive    977
+neutral     124
+negative     76
+Name: count, dtype: int64
+
+============================================================
+PERCENTAGE BREAKDOWN:
+============================================================
+sentiment
+positive    83.007647
+neutral     10.535259
+negative     6.457094
+Name: proportion, dtype: float64
