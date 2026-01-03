@@ -1,0 +1,180 @@
+=============================================================
+GITHUB UPLOAD INSTRUCTIONS
+=============================================================
+
+Your project has been initialized with Git and is ready to push to GitHub!
+
+=============================================================
+STEP 1: CREATE A NEW REPOSITORY ON GITHUB
+=============================================================
+
+1. Go to: https://github.com/new
+
+2. Fill in the repository details:
+   
+   Repository Name: sentiment-analyzer
+   (or any name you prefer, use hyphens not spaces)
+   
+   Description: 
+   "Amazon Review Sentiment Analyzer using Machine Learning and Streamlit"
+   
+   Visibility: 
+   ☑ Public (recommended for portfolio)
+   ☐ Private (if you prefer)
+   
+   ⚠️ IMPORTANT: 
+   ☐ DO NOT check "Add a README file"
+   ☐ DO NOT add .gitignore
+   ☐ DO NOT choose a license
+   (We already have these files!)
+
+3. Click "Create repository"
+
+=============================================================
+STEP 2: GET YOUR REPOSITORY URL
+=============================================================
+
+After creating the repository, you'll see a page with setup instructions.
+
+Copy the repository URL (it will look like):
+https://github.com/YOUR-USERNAME/sentiment-analyzer.git
+
+=============================================================
+STEP 3: PUSH YOUR CODE TO GITHUB
+=============================================================
+
+Run these commands in your terminal:
+
+# Add the remote repository
+git remote add origin https://github.com/YOUR-USERNAME/sentiment-analyzer.git
+
+# Push your code to GitHub
+git push -u origin main
+
+# If it asks for credentials:
+# - Username: your GitHub username
+# - Password: use a Personal Access Token (not your password!)
+
+=============================================================
+STEP 4: CREATE A PERSONAL ACCESS TOKEN (if needed)
+=============================================================
+
+If GitHub asks for a password and rejects it:
+
+1. Go to: https://github.com/settings/tokens
+
+2. Click "Generate new token" → "Generate new token (classic)"
+
+3. Give it a name: "Sentiment Analyzer Upload"
+
+4. Select scopes:
+   ☑ repo (all)
+
+5. Click "Generate token"
+
+6. COPY THE TOKEN IMMEDIATELY (you won't see it again!)
+
+7. Use this token as your password when pushing
+
+=============================================================
+STEP 5: VERIFY YOUR UPLOAD
+=============================================================
+
+1. Go to: https://github.com/YOUR-USERNAME/sentiment-analyzer
+
+2. You should see all your files:
+   ✅ README.md
+   ✅ app.py
+   ✅ model.pkl
+   ✅ vectorizer.pkl
+   ✅ requirements.txt
+   ✅ And more...
+
+=============================================================
+QUICK COMMAND REFERENCE
+=============================================================
+
+Already done (✅):
+git init                        # Initialize repository
+git add .                       # Stage all files
+git commit -m "message"         # Commit files
+
+TODO (📝):
+git remote add origin [URL]     # Connect to GitHub
+git push -u origin main         # Upload to GitHub
+
+=============================================================
+ALTERNATIVE: USE GITHUB DESKTOP
+=============================================================
+
+If you prefer a GUI:
+
+1. Download GitHub Desktop: https://desktop.github.com/
+
+2. Open GitHub Desktop
+
+3. File → "Add Local Repository"
+
+4. Select your project folder
+
+5. Click "Publish repository"
+
+6. Done! ✅
+
+=============================================================
+TROUBLESHOOTING
+=============================================================
+
+Problem: "remote origin already exists"
+Solution: git remote remove origin
+         Then add it again
+
+Problem: "Permission denied"
+Solution: Use a Personal Access Token instead of password
+
+Problem: "Branch 'main' doesn't exist"
+Solution: git branch -M main
+         Then push again
+
+=============================================================
+AFTER UPLOADING
+=============================================================
+
+Your repository will be live at:
+https://github.com/YOUR-USERNAME/sentiment-analyzer
+
+You can:
+✅ Share the link on LinkedIn
+✅ Add it to your resume
+✅ Deploy to Streamlit Cloud
+✅ Show it in interviews
+
+=============================================================
+NEXT STEP: DEPLOY TO STREAMLIT CLOUD
+=============================================================
+
+After pushing to GitHub:
+
+1. Go to: https://share.streamlit.io/
+
+2. Sign in with GitHub
+
+3. Click "New app"
+
+4. Select:
+   - Repository: YOUR-USERNAME/sentiment-analyzer
+   - Branch: main
+   - Main file path: app.py
+
+5. Click "Deploy"
+
+6. Wait 2-3 minutes
+
+7. Your app will be live at:
+   https://YOUR-USERNAME-sentiment-analyzer.streamlit.app
+
+8. Share this link anywhere! 🎉
+
+=============================================================
+END OF INSTRUCTIONS
+=============================================================

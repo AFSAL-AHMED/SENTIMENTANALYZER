@@ -1,44 +1,39 @@
 import pickle
-
-# Load the saved model and vectorizer
-print("Loading model and vectorizer...")
-model = pickle.load(open("model.pkl", "rb"))
-vec = pickle.load(open("vectorizer.pkl", "rb"))
-print("✅ Model and vectorizer loaded successfully!")
-
-# Test with sample reviews
-print("\n" + "="*60)
-print("TESTING THE TRAINED MODEL")
-print("="*60)
-
-test_reviews = [
-    "This product is absolutely amazing! I love it so much!",
-    "Terrible quality. Waste of money. Very disappointed.",
-    "Great purchase, works perfectly and arrived on time!",
-    "Worst product ever. Do not buy this garbage.",
-    "Excellent! Highly recommend to everyone!"
-]
-
 import re
 from nltk.corpus import stopwords
-stop = set(stopwords.words('english'))
+
+stop = set(stopwords.words('english')) - {'not', 'no', 'never', 'neither', 'nobody', 'nothing', 'nowhere', 'none'}
+model = pickle.load(open('model.pkl', 'rb'))
+vec = pickle.load(open('vectorizer.pkl', 'rb'))
 
 def clean(text):
     text = text.lower()
+    text = text.replace("n't", " not")
+    text = text.replace("'t", " not")
     text = re.sub(r'[^a-z ]', '', text)
     words = [w for w in text.split() if w not in stop]
     return " ".join(words)
 
-for i, review in enumerate(test_reviews, 1):
-    cleaned = clean(review)
-    vectorized = vec.transform([cleaned])
-    prediction = model.predict(vectorized)[0]
-    probability = model.predict_proba(vectorized)[0]
-    
-    print(f"\nTest {i}:")
-    print(f"Review: {review}")
-    print(f"Prediction: {prediction.upper()} ({max(probability)*100:.2f}% confident)")
+test_reviews = [
+    "the product wasn't really good",
+    "the product was really bad and not satisfactory",
+    "I didn't like this at all",
+    "This product is amazing!",
+    "Terrible quality, waste of money",
+    "bad product",
+    "not good",
+    "poor quality",
+    "excellent service"
+]
 
-print("\n" + "="*60)
-print("✅ Model is working perfectly!")
-print("="*60)
+print("Testing model predictions:")
+print("=" * 60)
+for review in test_reviews:
+    cleaned = clean(review)
+    v = vec.transform([cleaned])
+    pred = model.predict(v)[0]
+    prob = model.predict_proba(v)[0]
+    print(f"Review: {review}")
+    print(f"Cleaned: {cleaned}")
+    print(f"Prediction: {pred.upper()} (Neg: {prob[0]*100:.1f}%, Pos: {prob[1]*100:.1f}%)")
+    print("-" * 60)

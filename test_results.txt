@@ -1,0 +1,38 @@
+Testing model predictions:
+============================================================
+Review: the product wasn't really good
+Cleaned: product not really good
+Prediction: POSITIVE (Neg: 41.4%, Pos: 58.6%)
+------------------------------------------------------------
+Review: the product was really bad and not satisfactory
+Cleaned: product really bad not satisfactory
+Prediction: POSITIVE (Neg: 49.4%, Pos: 50.6%)
+------------------------------------------------------------
+Review: I didn't like this at all
+Cleaned: not like
+Prediction: POSITIVE (Neg: 42.6%, Pos: 57.4%)
+------------------------------------------------------------
+Review: This product is amazing!
+Cleaned: product amazing
+Prediction: POSITIVE (Neg: 33.7%, Pos: 66.3%)
+------------------------------------------------------------
+Review: Terrible quality, waste of money
+Cleaned: terrible quality waste money
+Prediction: NEGATIVE (Neg: 71.7%, Pos: 28.3%)
+------------------------------------------------------------
+Review: bad product
+Cleaned: bad product
+Prediction: POSITIVE (Neg: 42.8%, Pos: 57.2%)
+------------------------------------------------------------
+Review: not good
+Cleaned: not good
+Prediction: POSITIVE (Neg: 39.7%, Pos: 60.3%)
+------------------------------------------------------------
+Review: poor quality
+Cleaned: poor quality
+Prediction: POSITIVE (Neg: 36.9%, Pos: 63.1%)
+------------------------------------------------------------
+Review: excellent service
+Cleaned: excellent service
+Prediction: POSITIVE (Neg: 38.7%, Pos: 61.3%)
+------------------------------------------------------------

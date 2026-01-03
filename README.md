@@ -1,57 +1,33 @@
-# 🛍️ Amazon Review Sentiment Analyzer
+# Amazon Review Sentiment Analyzer
 
-A machine learning-powered web application that analyzes the sentiment of Amazon product reviews using Natural Language Processing (NLP).
-
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.29-red)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3-orange)
+A web application that analyzes the sentiment of Amazon product reviews using Natural Language Processing.
 
 ---
 
-## 📋 Table of Contents
+## Overview
 
-- [Overview](#overview)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Model Details](#model-details)
-- [Screenshots](#screenshots)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
+This project takes product reviews as input and predicts whether they are positive or negative using a trained Logistic Regression model with TF-IDF features.
+
+The model achieves around 90-95% accuracy on test data.
 
 ---
 
-## 🎯 Overview
+## Features
 
-This project analyzes product reviews and predicts whether they are **positive** or **negative** using a trained Logistic Regression model with TF-IDF features.
-
-**Key Highlights:**
-- ✅ 90-95% accuracy on test data
-- ✅ Real-time sentiment prediction
-- ✅ Beautiful, user-friendly web interface
-- ✅ Confidence score display
-- ✅ Fast and lightweight
+- Instant Sentiment Analysis
+- Confidence Scores for predictions
+- Automatic text preprocessing and cleaning
+- Color-coded results display
+- Example reviews to test the app
 
 ---
 
-## ✨ Features
-
-- **Instant Sentiment Analysis**: Get immediate feedback on review sentiment
-- **Confidence Scores**: See how confident the model is about its prediction
-- **Text Preprocessing**: Automatic cleaning and normalization of input text
-- **Visual Feedback**: Color-coded results with emojis (😊 for positive, 😠 for negative)
-- **Example Reviews**: Pre-loaded examples to test the app
-- **Responsive Design**: Works on desktop and mobile browsers
-
----
-
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
 - Python 3.11 or higher
-- pip (Python package manager)
+- pip package manager
 
 ### Step 1: Clone the Repository
 
@@ -68,12 +44,12 @@ python -m venv venv
 
 ### Step 3: Activate Virtual Environment
 
-**Windows:**
+Windows:
 ```bash
 venv\Scripts\activate
 ```
 
-**macOS/Linux:**
+macOS/Linux:
 ```bash
 source venv/bin/activate
 ```
@@ -92,7 +68,7 @@ python -c "import nltk; nltk.download('stopwords')"
 
 ---
 
-## 💻 Usage
+## Usage
 
 ### Running the Web App
 
@@ -100,28 +76,26 @@ python -c "import nltk; nltk.download('stopwords')"
 streamlit run app.py
 ```
 
-The app will open automatically in your browser at `http://localhost:8501`
+The app will open in your browser at http://localhost:8501
 
-### Using the Model Programmatically
+### Using the Model in Code
 
 ```python
 import pickle
 import re
 from nltk.corpus import stopwords
 
-# Load model and vectorizer
 model = pickle.load(open("model.pkl", "rb"))
 vec = pickle.load(open("vectorizer.pkl", "rb"))
 
-# Clean text
 stop = set(stopwords.words('english'))
+
 def clean(text):
     text = text.lower()
     text = re.sub(r'[^a-z ]', '', text)
     words = [w for w in text.split() if w not in stop]
     return " ".join(words)
 
-# Predict
 review = "This product is amazing!"
 cleaned = clean(review)
 vectorized = vec.transform([cleaned])
@@ -133,213 +107,90 @@ print(f"Sentiment: {sentiment} ({confidence*100:.2f}%)")
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 sentiment-analyzer/
-│
-├── 📊 DATA FILES
-│   ├── review dataset.csv              # Original dataset (18.3 MB)
-│   ├── cleaned_dataset.csv             # After column selection
-│   ├── labeled_dataset.csv             # With sentiment labels
-│   ├── final_dataset.csv               # Binary classification
-│   └── processed_dataset.csv           # With cleaned text
-│
-├── 🤖 MODEL FILES
-│   ├── model.pkl                       # Trained Logistic Regression
-│   └── vectorizer.pkl                  # TF-IDF Vectorizer
-│
-├── 📝 SCRIPTS
-│   ├── app.py                          # Streamlit web app
-│   ├── sentiment_project.py            # Model training script
-│   └── test_model.py                   # Model testing script
-│
-├── 📄 DOCUMENTATION
-│   ├── README.md                       # This file
-│   ├── requirements.txt                # Python dependencies
-│   ├── MODEL_SUMMARY.txt               # Model documentation
-│   └── cleaning_summary.txt            # Data cleaning report
-│
-└── 📦 venv/                            # Virtual environment
+|
+|-- DATA FILES
+|   |-- review dataset.csv
+|   |-- cleaned_dataset.csv
+|   |-- labeled_dataset.csv
+|   |-- final_dataset.csv
+|   |-- processed_dataset.csv
+|
+|-- MODEL FILES
+|   |-- model.pkl
+|   |-- vectorizer.pkl
+|
+|-- SCRIPTS
+|   |-- app.py
+|   |-- sentiment_project.py
+|   |-- test_model.py
+|
+|-- DOCUMENTATION
+|   |-- README.md
+|   |-- requirements.txt
+|   |-- MODEL_SUMMARY.txt
+|   |-- cleaning_summary.txt
+|
+|-- venv/
 ```
 
 ---
 
-## 🧠 Model Details
+## Model Details
 
 ### Algorithm
-- **Model**: Logistic Regression
-- **Max Iterations**: 1000
-- **Random State**: 42
+- Logistic Regression
+- Max Iterations: 1000
+- Random State: 42
 
 ### Feature Extraction
-- **Method**: TF-IDF (Term Frequency-Inverse Document Frequency)
-- **Max Features**: 5000 words
-- **Vocabulary Size**: ~5000 unique words
+- TF-IDF Vectorization
+- Max Features: 5000 words
 
 ### Dataset
-- **Total Reviews**: 1,053
-- **Training Set**: 842 reviews (80%)
-- **Test Set**: 211 reviews (20%)
-- **Classes**:
-  - Positive: 977 reviews (92.83%)
-  - Negative: 76 reviews (7.17%)
+- Total Reviews: 1,053
+- Training Set: 842 reviews (80%)
+- Test Set: 211 reviews (20%)
+- Positive: 977 reviews (92.83%)
+- Negative: 76 reviews (7.17%)
 
-### Performance
-- **Accuracy**: ~90-95%
-- **Precision**: High for positive class
-- **Recall**: High for positive class
-
-### Text Preprocessing
+### Text Preprocessing Steps
 1. Lowercase conversion
 2. Special character removal
 3. Number removal
-4. Stopword removal (179 English stopwords)
+4. Stopword removal
 5. Tokenization
 
 ---
 
-## 📸 Screenshots
+## Technologies Used
 
-### Main Interface
-![Main Interface](screenshots/main.png)
-
-### Positive Sentiment Result
-![Positive Result](screenshots/positive.png)
-
-### Negative Sentiment Result
-![Negative Result](screenshots/negative.png)
+- Python 3.11
+- Streamlit
+- scikit-learn
+- NLTK
+- pandas
+- NumPy
 
 ---
 
-## 🌐 Deployment
+## Training Process
 
-### Deploy to Streamlit Cloud (Recommended)
+1. Data Collection - Collected Amazon product reviews dataset (1,597 reviews)
 
-1. Push your code to GitHub
-2. Go to [Streamlit Cloud](https://streamlit.io/cloud)
-3. Sign in with GitHub
-4. Click "New app"
-5. Select your repository and `app.py`
-6. Click "Deploy"
+2. Data Cleaning - Removed unnecessary columns, removed missing values. Final dataset: 1,177 reviews
 
-### Deploy to Heroku
+3. Sentiment Labeling - Rating 4 and above = Positive, Rating 2 and below = Negative, Rating 3 was removed for binary classification
 
-1. Create `Procfile`:
-```
-web: streamlit run app.py --server.port=$PORT
-```
+4. Text Preprocessing - Lowercase, special character removal, stopword removal. Text reduction around 38%
 
-2. Deploy:
-```bash
-heroku create your-app-name
-git push heroku main
-```
+5. Feature Extraction - TF-IDF vectorization with 5000 max features
 
-### Deploy to AWS/GCP
+6. Model Training - 80/20 train/test split, Logistic Regression with 1000 iterations
 
-Refer to the respective cloud provider's documentation for deploying Streamlit apps.
+7. Model Evaluation - Classification report and confusion matrix generated
 
----
-
-## 🛠️ Technologies Used
-
-- **Python 3.11**: Programming language
-- **Streamlit**: Web framework
-- **scikit-learn**: Machine learning library
-- **NLTK**: Natural language processing
-- **pandas**: Data manipulation
-- **NumPy**: Numerical computing
-
----
-
-## 📊 Training Process
-
-### Step 1: Data Collection
-- Collected Amazon product reviews dataset (1,597 reviews)
-
-### Step 2: Data Cleaning
-- Removed unnecessary columns (kept only text and rating)
-- Removed missing values
-- Final dataset: 1,177 reviews
-
-### Step 3: Sentiment Labeling
-- Rating ≥ 4 → Positive
-- Rating ≤ 2 → Negative
-- Rating = 3 → Neutral (removed for binary classification)
-
-### Step 4: Text Preprocessing
-- Lowercase conversion
-- Special character removal
-- Stopword removal
-- Text reduction: ~38%
-
-### Step 5: Feature Extraction
-- TF-IDF vectorization
-- 5000 max features
-- Created numerical feature matrix
-
-### Step 6: Model Training
-- Train/test split (80/20)
-- Logistic Regression with 1000 iterations
-- Stratified sampling for balanced sets
-
-### Step 7: Model Evaluation
-- Classification report generated
-- Confusion matrix analyzed
-- Model saved as `model.pkl`
-
-### Step 8: Web App Development
-- Streamlit interface created
-- Real-time predictions enabled
-- Deployed for public use
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-## 👨‍💻 Author
-
-**AFSAL AHMED**
-
-- GitHub: [@afsalahmed](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-
----
-
-## 🙏 Acknowledgments
-
-- Amazon for the reviews dataset
-- scikit-learn for the ML library
-- Streamlit for the web framework
-- NLTK for NLP tools
-
----
-
-## 📧 Contact
-
-For questions or feedback, please reach out at: your.email@example.com
-
----
-
-**⭐ If you found this project helpful, please give it a star!**
-
----
-
-**Made with ❤️ using Python, Streamlit, and Machine Learning**
+8. Web App - Built using Streamlit for real-time predictions
